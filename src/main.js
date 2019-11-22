@@ -20,7 +20,7 @@ $(document).ready (function() {
     })();
 
     function getElements(response) {
-      $(".print").text(`Doctor ${response.data[0].profile.first_name} `);
+      $(".info").append(`Doctor ${response.data[0].practices[0].name} `);
     }
 
   });
