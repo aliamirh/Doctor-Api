@@ -4,19 +4,22 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-$(document).ready (function(){
-  $("#formGroup").click(function(){
-    const issue = $("#medIssue").val();
+$(document).ready (function() {
+
+  $("#formGroup").submit(function(event) {
+    event.preventDefault();
     const userDoctor = $("#doctorName").val();
+    $("#doctorName").val("");
+    console.log(userDoctor);
 
-    function getElements() {
-      $(".print").text (`The doctor ${userDoctor} is avaliable to look at ${issue}. `)
-    }
-
-    (async () =>{
-      let newDoctor = new DoctorService();
-      let response = await newDoctor.getDoctorBy(userDoctor);
+    (async () => {
+      let doctorService = new DoctorService();
+      const response = await doctorService.getDoctorBy(name);
       getElements(response);
     })();
+    function getElements(response) {
+      $(".print").text(`Doctor ${response.name} `);
+    }
+
   });
 });
