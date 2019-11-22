@@ -16,10 +16,11 @@ $(document).ready (function() {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBy(name);
       getElements(response);
-      
+
     })();
+
     function getElements(response) {
-      $(".print").text(`Doctor ${response.data[0].practices[0].name} `);
+      $(".print").text(`Doctor ${response.data[0].profile.first_name} `);
     }
 
   });
