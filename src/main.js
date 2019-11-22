@@ -14,7 +14,7 @@ $(document).ready (function(){
 
     (async () =>{
       let newDoctor = new DoctorService();
-      const response = await newDoctor.getDoctorBy(name, condition);
+      const response = await newDoctor.getDoctorBy(doctors, conditions);
       getElements(response);
     })();
 
