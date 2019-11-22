@@ -8,17 +8,18 @@ $(document).ready (function() {
 
   $("#formGroup").submit(function(event) {
     event.preventDefault();
-    const userDoctor = $("#doctorName").val();
+    let name = $("#doctorName").val();
     $("#doctorName").val("");
-    console.log(userDoctor);
+    console.log(name);
 
     (async () => {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBy(name);
       getElements(response);
+      
     })();
     function getElements(response) {
-      $(".print").text(`Doctor ${response.name} `);
+      $(".print").text(`Doctor ${response.data[0].practices[0].name} `);
     }
 
   });
