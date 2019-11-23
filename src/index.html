@@ -4,35 +4,29 @@
     <title>Doctor</title>
   </head>
   <body>
-    <div class ="container">
-      <h2>Whats going on?</h2>
-      <form id="formIssue">
-          <h5>What is your medical issue?</h5>
-          <input type="text" id="medIssue">
-        <button type="submit" name="button">Submit</button>
-      </form>
-      <div class="issuesContainer">
-        <h6 class="hideIssues">Doctors within a 20 mile radius that can help:</h4>
-        <ul id="issuesPrint">
-
-
-        </ul>
-      </div>
-
-
-      <form id="formDocName">
-          <h5>What is the name of the doctor you see?</h5>
-          <input type="text" id="doctorName">
-
-        <button id="nameBtn" type="submit" name="button">Submit</button>
-      </form>
-      <div class="container1">
-        <h6 class="hideDocsSearch">Doctors within a 20 mile radius:</h4>
-        <ul id="doctorPrint">
-
-
-        </ul>
-      </div>
+    <div class="container">
+      <h1>Whats going on?</h2>
     </div>
+      <div class="issuesContainer">
+        <form id="formIssue">
+            <h5>What is your medical issue?</h5>
+            <input type="text" placeholder="search"id="medIssue">
+          <button type="submit" name="button" class="btn btn-dark">Submit</button>
+        </form>
+          <h6 class="hideIssues">Doctors within a 20 mile radius that can help:</h4>
+          <ul id="issuesPrint">
+          </ul>
+      </div>
+      <div class="container1">
+        <form id="formDocName">
+            <h5>What is the name of the doctor you see?</h5>
+            <input type="text" id="doctorName" placeholder="search">
+          <button type="submit" name="button"class="btn btn-dark">Submit</button>
+        </form>
+          <h6 class="hideDocsSearch">Doctors within a 20 mile radius:</h4>
+          <ul id="doctorPrint">
+          </ul>
+      </div>
+
   </body>
 </html>
