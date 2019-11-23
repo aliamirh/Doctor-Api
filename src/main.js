@@ -20,9 +20,16 @@ $(document).ready (function() {
     })();
 
     function getElements(response) {
-      $(".print").text(`Doctor ${response.data.map(function(docNames){
-        return docNames.profile.first_name
-      }).join(" ")}`);
+      // let doctors = [];
+
+      if (response.data.length === 0){
+        alert("Can't find anyone");
+      }else {
+        for (let i = 0; i < response.data.length; i++){
+          let firstName = response.data[i].profile.first_name;
+        }
+      }
+    //   $(".info").append(`Doctor ${response.data[0].profile.first_name} `);
     }
 
   });
