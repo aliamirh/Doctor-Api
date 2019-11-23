@@ -4,6 +4,10 @@
 #doctorPrint{
   display: none;
 }
-.hide1{
+.hideDocsSearch{
   display: none;
+}
+
+.hideIssues{
+  display:none;
 }
