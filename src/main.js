@@ -25,6 +25,7 @@ $(document).ready (function() {
         alert("Sorry, no doctors meet the criteria");
       }else{
         for(let j = 0; j < response2.data.length; j++){
+          let numberOfDoctors = response2.data.length;
           let doctorFirst = response2.data[j].profile.first_name;
           let doctorLast = response2.data[j].profile.last_name;
           let docTitle = response2.data[j].profile.title;
@@ -35,7 +36,7 @@ $(document).ready (function() {
               doctorWebSite = response2.data[j].practices[0].website;
             }
           let doctorSpecialties = response2.data[j].specialties[0].name;
-          console.log(doctorFirst, doctorLast, docTitle, doctorWebSite, doctorSpecialties);
+          $(".hideIssues").text(`There is ${numberOfDoctors} doctor(s) that can help.`)
           $("#issuesPrint").append(`<li> <strong>${doctorFirst} ${doctorLast}</strong> ${docTitle} <strong>Specialtiy:</strong> ${doctorSpecialties}</li><li class=nested><a id="link" href=>${doctorWebSite}</a></li>`).show();
         }
       }
@@ -53,15 +54,14 @@ $(document).ready (function() {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctorBy(name);
       getElements(response);
-
     })();
 
     function getElements(response) {
-
       if (response.data.length === 0){
         alert("Sorry, no doctors meet the criteria");
       }else {
         for (let i = 0; i < response.data.length; i++){
+          let numberOfProviders = response.data.length;
           let doctorFirstName = response.data[i].profile.first_name;
           let doctorLastName = response.data[i].profile.last_name;
           let doctorTitle = response.data[i].profile.title;
@@ -80,11 +80,10 @@ $(document).ready (function() {
             }else{
               doctorNewPatient = "Not Accepting New Patients"
             }
-          console.log(doctorFirstName, doctorLastName, doctorTitle, doctorStreet, doctorCity, doctorPhone, doctorNewPatient, doctorSite);
+          $(".hideDocsSearch").text(`There is ${numberOfProviders} result(s).`)
           $("#doctorPrint").append(`<li> <strong>${doctorFirstName} ${doctorLastName}</strong> ${doctorTitle} is currently ${doctorNewPatient}</li><li class=nested> Office location: ${doctorStreet}, ${doctorCity}. <br> Phone number: ${doctorPhone} <br> <a href=>${doctorSite}</a> </li>`).show();
         }
       }
-    //   $(".info").append(`Doctor ${response.data[0].profile.first_name} `);
     }
   });
 

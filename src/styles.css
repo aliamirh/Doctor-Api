@@ -11,3 +11,7 @@
 .hideIssues{
   display:none;
 }
+
+body{
+  float: left;
+}
