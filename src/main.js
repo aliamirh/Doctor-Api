@@ -10,7 +10,7 @@ $(document).ready (function() {
     event.preventDefault();
     let name = $("#doctorName").val();
     $("#doctorName").val("");
-    console.log(name);
+
 
     (async () => {
       let doctorService = new DoctorService();
@@ -20,17 +20,24 @@ $(document).ready (function() {
     })();
 
     function getElements(response) {
-      // let doctors = [];
-
+      let doctorInfo = [];
       if (response.data.length === 0){
         alert("Can't find anyone");
       }else {
         for (let i = 0; i < response.data.length; i++){
-          let firstName = response.data[i].profile.first_name;
+          let doctorFirstName = response.data[i].profile.first_name;
+          let doctorLastName = response.data[i].profile.last_name;
+          let doctorTitle = response.data[i].profile.title;
+          let doctorStreet = response.data[i].practices[0].visit_address.street;
+          let doctorCity = response.data[i].practices[0].visit_address.city;
+          let doctorPhone = response.data[i].practices[0].phones[0].number;
+          let doctorNewPatient = response.data[i].practices[0].accepts_new_patients;
+          console.log(doctorFirstName, doctorLastName, doctorTitle, doctorStreet, doctorCity, doctorPhone, doctorNewPatient)
         }
+        
+
       }
     //   $(".info").append(`Doctor ${response.data[0].profile.first_name} `);
     }
-
   });
 });
