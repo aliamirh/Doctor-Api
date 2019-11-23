@@ -10,7 +10,8 @@ $(document).ready (function() {
     event.preventDefault();
     let name = $("#doctorName").val();
     $("#doctorName").val("");
-
+    $("#doctorPrint").empty();
+    $(".hide1").show();
 
     (async () => {
       let doctorService = new DoctorService();
@@ -20,7 +21,7 @@ $(document).ready (function() {
     })();
 
     function getElements(response) {
-      let doctorInfo = [];
+
       if (response.data.length === 0){
         alert("Can't find anyone");
       }else {
@@ -31,11 +32,15 @@ $(document).ready (function() {
           let doctorStreet = response.data[i].practices[0].visit_address.street;
           let doctorCity = response.data[i].practices[0].visit_address.city;
           let doctorPhone = response.data[i].practices[0].phones[0].number;
-          let doctorNewPatient = response.data[i].practices[0].accepts_new_patients;
-          console.log(doctorFirstName, doctorLastName, doctorTitle, doctorStreet, doctorCity, doctorPhone, doctorNewPatient)
+          let doctorNewPatient;
+            if (response.data[i].practices[0].accepts_new_patients === true){
+              doctorNewPatient = "Accepting New Patients"
+            }else{
+              doctorNewPatient = "Not Accepting New Patients"
+            }
+          console.log(doctorFirstName, doctorLastName, doctorTitle, doctorStreet, doctorCity, doctorPhone, doctorNewPatient);
+          $("#doctorPrint").append(`<li> <strong>${doctorFirstName} ${doctorLastName}</strong> ${doctorTitle} is currently ${doctorNewPatient}</li><li class=nested> Office location:${doctorStreet}, ${doctorCity}  Phone number:${doctorPhone} </li>`).show();
         }
-        
-
       }
     //   $(".info").append(`Doctor ${response.data[0].profile.first_name} `);
     }
