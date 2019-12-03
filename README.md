@@ -19,21 +19,21 @@ _A user can enter a name or symptom and the website will display a list of docto
 * _This WebPack is set up with Windows OS for Mac OS you will need to change the "&" to a ";" in the webpack.config.js file._
 
 * _When a user inputs a symptom they are having: <br>
-  Input: "Tooth"
+  Input: "Tooth" <br>
   Output: "There is 1 doctor(s) that can help.
           Renee Robertson DMD Specialtiy: Dentistry
           http://www.anchoragemidtowndental.com/"_
 
-* _When a user inputs a name of a doctor:
-  Input: "Tim"
+* _When a user inputs a name of a doctor: <br>
+  Input: "Tim" <br>
   Output: "There is 10 result(s).
             Timothy Elliott DMD is currently Accepting New Patients
             Office location: 202 NE 181st Ave, Portland.
             Phone number: 5036699930
             ...."_
 
-* _When a user inputs a value that has no results it will display an alert:
-  Input: "asdf"
+* _When a user inputs a value that has no results it will display an alert: <br>
+  Input: "asdf" <br>
   Output: "Sorry, no doctors meet the criteria"_
 
 * _If a user doesnt fill out either of the form fields and hits "submit", the program will alert them "Please fill out this field." before submitting.
