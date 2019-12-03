@@ -36,7 +36,7 @@ _A user can enter a name or symptom and the website will display a list of docto
   Input: "asdf" <br>
   Output: "Sorry, no doctors meet the criteria"_
 
-* _If a user doesnt fill out either of the form fields and hits "submit", the program will alert them "Please fill out this field." before submitting.
+* _If a user doesnt fill out either of the form fields and hits "submit", the program will alert them "Please fill out this field." before submitting._
 
 
 ## Known Bugs
