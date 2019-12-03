@@ -18,7 +18,7 @@ _A user can enter a name or symptom and the website will display a list of docto
 ## Specs
 * _This WebPack is set up with Windows OS for Mac OS you will need to change the "&" to a ";" in the webpack.config.js file._
 
-* _When a user inputs a symptom they are having:
+* _When a user inputs a symptom they are having: <br>
   Input: "Tooth"
   Output: "There is 1 doctor(s) that can help.
           Renee Robertson DMD Specialtiy: Dentistry
